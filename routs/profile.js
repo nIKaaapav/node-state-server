@@ -27,7 +27,7 @@ router.post('/',auth, async (req, res) => {
 
         await user.save();
         res.redirect('/profile')
-
+        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
     } catch (e) {
         console.log(e);
     }
