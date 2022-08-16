@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab col s6"><a  class="active" href="#login">login</a></li>
+            <li class="tab col s6"><a class="active" href="#register">register</a></li>
+        </ul>
+    </div>
+    <div id="login" class="col s6 offset-s3">
+        {{#if error}}
+            <p class="error">{{error}}</p>
+        {{/if}}
+        <form action="/auth/login" method="post">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="email" id="email" type="text" class="validate" required>
+                    <label class="active" for="email">email</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="password"  id="password" type="password" class="validate" required>
+                    <label class="active" for="password">password</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+            </div>
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <p><a href="/auth/reset">forgot pass</a></p>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            </button>
+        </form>
+    </div>
+    <div id="register" class="col s6 offset-s3">
+        {{#if error}}
+            <p class="error">{{error}}</p>
+        {{/if}}
+        <form action="/auth/register" method="post">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="email" id="reemail" type="text" class="validate" required>
+                    <label class="active" for="reemail">email</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="name" id="name" type="text" class="validate">
+                    <label class="active" for="name">name</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="repassword"  id="repassword" type="password" class="validate" required>
+                    <label class="active" for="repassword">password</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="confirm"  id="confirm" type="password" class="validate" required>
+                    <label class="active" for="confirm">password</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+            </div>
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Courses App</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if isHome}}
+                <li class="active">
+                    <a href="/">Main</a>
+                </li>
+            {{else}}
+                <li>
+                    <a href="/">Main</a>
+                </li>
+            {{/if}}
+
+            {{#if isCourses}}
+                <li class="active">
+                    <a href="/courses">Courses</a>
+                </li>
+            {{else}}
+                <li>
+                    <a href="/courses">Courses</a>
+                </li>
+            {{/if}}
+
+            {{#if isAuth}}
+                {{#if isAdd}}
+                    <li class="active">
+                        <a href="/add">add</a>
+                    </li>
+                {{else}}
+                    <li>
+                        <a href="/add">add</a>
+                    </li>
+                {{/if}}
+                {{#if isCard}}
+                    <li class="active">
+                        <a href="/card">card</a>
+                    </li>
+                {{else}}
+                    <li>
+                        <a href="/card">card</a>
+                    </li>
+                {{/if}}
+                {{#if isOrders}}
+                    <li class="active">
+                        <a href="/orders">orders</a>
+                    </li>
+                {{else}}
+                    <li>
+                        <a href="/orders">orders</a>
+                    </li>
+                {{/if}}
+
+                {{#if isProfile}}
+                    <li class="active">
+                        <a href="/profile">Profile</a>
+                    </li>
+                {{else}}
+                    <li>
+                        <a href="/profile">Profile</a>
+                    </li>
+                {{/if}}
+                <li class="active">
+                <a href="/auth/logout">logout</a>
+                </li>
+            {{else}}
+                {{#if isLogin}}
+                    <li class="active">
+                        <a href="/auth/login#login">login</a>
+                    </li>
+                {{else}}
+                    <li>
+                        <a href="/auth/login#login">login</a>
+                    </li>
+                {{/if}}
+            {{/if}}
+
+
+        </ul>
+    </div>
+</nav>

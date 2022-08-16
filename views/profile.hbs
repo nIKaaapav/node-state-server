@@ -1,0 +1,36 @@
+<h1>Profile</h1>
+
+<div class="row">
+    <div class="col s6">
+        <img class="avatar" src="/{{user.avatarUrl}}" alt="">
+        <p>no img</p>
+    </div>
+    <div class="col s6">
+        <form action="/profile" method="post" enctype="multipart/form-data">
+            <p>
+                email: <sptong>{{user.email}}</sptong>
+            </p>
+            <div>
+                <div class="input-field col s6">
+                    <input name="name" id="name" type="text" value="{{user.name}}" class="validate" required>
+                    <label class="active" for="name">name</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+            </div>
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Img</span>
+                    <input type="file" name="avatar">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+
+            <button class="btn waves-effect waves-light" type="submit">Submit
+            </button>
+        </form>
+    </div>
+</div>

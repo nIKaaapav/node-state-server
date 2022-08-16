@@ -1,0 +1,39 @@
+<h1>edit {{course.title}}</h1>
+
+<form action="/courses/edit" method="post">
+    <div class="row">
+        <div class="input-field col s6">
+            <input name="title" id="title" type="text" value="{{course.title}}" class="validate" required>
+            <label class="active" for="title">title</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input name="price" value="{{course.price}}"  id="price" type="number" class="validate" required min="1">
+            <label class="active" for="price">price</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s6">
+            <input name="img"  id="img" value="{{course.img}}" type="text" class="validate" required>
+            <label class="active" for="img">img</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{{course._id}}">
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    </button>
+</form>
+
+<form action="/courses/remove" method="post">
+    <input type="hidden" name="id" value="{{course.id}}">
+    <input type="hidden" name="_csrf" value="{{@root.csrf}}">
+
+    <button class="btn red"> delete</button>
+</form>
